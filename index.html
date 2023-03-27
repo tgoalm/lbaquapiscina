@@ -25,9 +25,9 @@
               <div class="rd-navbar-panel">
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <div class="rd-navbar-brand"><a class="brand-name" href="index.html">
-                    <div class="brand-mobile"><img src="images/logo.png" alt="" width="75" height="75"/></div>
-                    <div class="brand-desktop"><img src="images/logo.png" alt="" width="150" height="135"/></div></a></div>
-              </div>
+                  <div class="brand-mobile"><img src="images/logo.png" alt="" width="75" height="75"/></div>
+                  <div class="brand-desktop"><img src="images/logo.png" alt="" width="150" height="135"/></div></a></div>
+                </div>
               <div class="rd-navbar-nav-wrap">
                 <div class="rd-navbar-nav-inner">
                   <ul class="rd-navbar-nav">
@@ -35,18 +35,20 @@
                     <li><a href="about.html">Sobre nós</a></li>
                     <li><a href="services.html">Serviços</a></li>
                     <li><a href="contacts-1.html">Contatos</a></li>
+                    <div class="rd-navbar-nav-footer">
+                      <ul class="inline-list inline-list-md">
+                        <li><a class="icon icon-xs link-gray-base fa-instagram" href="https://www.instagram.com/lb_aquaa/"></a></li>
+                      </ul>
+                    </div>
                   </ul>
-                  <div class="rd-navbar-nav-footer">
-                    <ul class="inline-list inline-list-md">
-                      <li><a class="icon icon-xs link-gray-base fa-instagram" href="https://www.instagram.com/lb_aquaa/"></a></li>
-                    </ul>
-                  </div>
+
                 </div>
               </div>
             </div>
           </nav>
         </div>
       </header>
+
       <section class="jumbotron-custom jumbotron-custom-3 bg-white bg-image bg-image-custom bg-image-center" style="background-image: url(images/frente-site-2.png); max-height: 300px;">
         <div class="jumbotron-custom-content text-center">
           <div class="shell">
@@ -67,7 +69,7 @@
               <div class="inset-1">
                 <h2>QUEM SOMOS NÓS</h2>
                 <div class="p text-width-smallest">
-                  <p class="big">Há 9 anos de experiência na área, trabalhamos para garantir que o seu lazer seja garantido. 
+                  <p class="big">Há nove anos, trabalhamos para assegurar que o seu lazer seja garantido.</p>
                 </div><a class="btn btn-sm btn-style-1 btn-primary" href="about.html">Leia mais</a>
               </div>
             </div>
@@ -141,6 +143,10 @@
                             <label class="form-label-outside" for="contact-phone">Telefone</label>
                             <input class="form-control" id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric">
                           </div>
+                          <div class="form-group">
+                            <label class="form-label-outside" for="contact-email">E-mail</label>
+                            <input class="form-control" id="contact-email" type="email" name="email" data-constraints="@Required">
+                          </div>
                           <button class="btn btn-sm btn-primary btn-block btn-circle" type="submit" style="width: auto">SOLICITAR CONTATO</button>
                         </form>
                       </div>
@@ -153,55 +159,32 @@
         </div>
       </section>
 
-      <footer class="page-footer page-footer-variant-3">
-        <div class="shell">
-          <div class="range range-50">
-            <div class="cell-sm-6 cell-md-4">
-              <h3>Páginas</h3>
-              <div class="divider divider-conch"></div>
-              <ul class="footer-navigation row footer-navigation-vertical" style="max-width: 390px;">
-                <li class="col-xs-6"><a href="index.html">Home</a></li>
-                <li class="col-xs-6"><a href="about.html">Sobre nós</a></li>
-                <li class="col-xs-6"><a href="services.html">Serviços</a></li>
-                <li class="col-xs-6"><a href="contacts-1.html">Contatos</a></li>
-              </ul>
-            </div>
-            <div class="cell-sm-6 cell-md-5">
-              <h3>Descrição</h3>
-              <div class="divider divider-conch"></div>
-              <div class="text-highlighted-wrap">
-                <p class="text-highlighted">Limpeza e manutençao de piscinas em São Paulo e litoral. Aproveite cada momento de lazer.
-              </div>
-            </div>
-            <div class="cell-sm-6 cell-md-3">
-              <h3>Siga-nos</h3>
-              <div class="divider divider-conch"></div>
-              <ul class="inline-list inline-list-xs">
-                <li><a class="icon icon-xs link-gray-base fa-instagram" href="https://www.instagram.com/lb_aquaa/"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <div class="modal fade text-center" id="modalWindow" role="dialog">
-      <div class="modal-dialog custom-modal-dialog">
-        <div class="custom-modal-content">
-          <button class="close" type="button" data-dismiss="modal"></button>
+      <section>
+        <footer class="page-footer page-footer-default">
           <div class="shell">
-            <div class="box-portfolio"><img class="box-portfolio-image" src="images/barbers-single-1-130x130.jpg" alt="" width="130" height="130"/>
-              <p class="box-portfolio-header">simon wilson</p>
-              <div class="box-portfolio-text">
-                <p>Simon Wilson founded Barbershop in 2003 at the age of 23. He decided to establish a place where the long standing traditions of American barbering could be saved. He kept Barbershop a true place for men, their fathers, and sons, rather than converting it to a unisex salon as was the popular trend at the time. Over the past 13 years, Mr. Wilson has grown his shop from a small, local spot to a nationally and internationally recognized standard in the industry. Simon has been the recipient of various accolades including the HYPE Award for Entrepreneurs and the Hartford Business Journal's 40 Under Forty (Class of 2014). He can be found at the shop on Wednesdays and Fridays.</p>
+            <div class="range range-xs-center">
+              <div class="cell-lg-10"><a class="brand" href="index.html"><img src="images/logo.png" alt="" width="75" height="75"/></a>
+                <div class="text-highlighted-wrap">
+                  <p class="text-highlighted">Limpeza e manutençao de piscinas em São Paulo e litoral. Aproveite cada momento de lazer.</p>
+                </div>
+                <ul class="footer-navigation footer-navigation-horizontal">
+                  <li class="active">><a href="index.html">Home</a></li>
+                  <li><a href="about.html">Sobre nós</a></li>
+                  <li><a href="services.html">Serviços</a></li>
+                  <li><a href="contacts-1.html">Contatos</a></li>
+                </ul>
+                <div class="divider divider-small divider-light block-centered"></div>
+                <div class="rd-navbar-nav-footer">
+                  <ul class="inline-list inline-list-md">
+                    <li><a class="icon icon-xs link-gray-base fa-instagram" href="https://www.instagram.com/lb_aquaa/"></a></li>
+                  </ul>
+                </div>
               </div>
-              <ul class="inline-list inline-list-md">
-                <li><a class="icon icon-xs link-gray-base fa-instagram" href="https://www.instagram.com/lb_aquaa/"></a></li>
-              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+
     <div class="snackbars" id="form-output-global"></div>
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
@@ -239,5 +222,6 @@
     </div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    </div>
   </body>
 </html>
