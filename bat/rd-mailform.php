@@ -101,7 +101,7 @@ try {
         $mail->Host = $formConfig['mx1.hostinger.com'];
 
         // Set the SMTP port number - likely to be 25, 465 or 587
-        $mail->Port = $formConfig['465'];
+        $mail->Port = $formConfig['587'];
 
         // Whether to use SMTP authentication
         $mail->SMTPAuth = true;
