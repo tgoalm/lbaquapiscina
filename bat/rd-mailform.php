@@ -93,25 +93,25 @@ try {
         // 0 = off (for production use)
         // 1 = client messages
         // 2 = client and server messages
-        $mail->SMTPDebug = 2;
+        $mail->SMTPDebug = 0;
 
         $mail->Debugoutput = 'html';
 
         // Set the hostname of the mail server
-        $mail->Host = $formConfig['mx1.hostinger.com'];
+        $mail->Host = $formConfig['host'];
 
         // Set the SMTP port number - likely to be 25, 465 or 587
-        $mail->Port = $formConfig['587'];
+        $mail->Port = $formConfig['port'];
 
         // Whether to use SMTP authentication
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "ssl";
 
         // Username to use for SMTP authentication
-        $mail->Username = $formConfig['lbaquapiscina@gmail.com'];
+        $mail->Username = $formConfig['username'];
 
         // Password to use for SMTP authentication
-        $mail->Password = $formConfig['Gomes09@'];
+        $mail->Password = $formConfig['password'];
     }
 
     $mail->From = $addresses[0][0][0];
