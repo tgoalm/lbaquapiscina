@@ -8,7 +8,7 @@ date_default_timezone_set('Etc/UTC');
 try {
     require './phpmailer/PHPMailerAutoload.php';
 
-    $recipients = $formConfig['recipientEmail'];
+    $recipients = 'contato@lbaquapiscina.com.br';
 
     preg_match_all("/([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)/", $recipients, $addresses, PREG_OFFSET_CAPTURE);
 
@@ -35,16 +35,16 @@ try {
     if (isset($_POST['form-type'])) {
         switch ($_POST['form-type']){
             case 'contact':
-                $subject = 'A message from your site visitor';
+                $subject = 'Mensagem de um cliente';
                 break;
             case 'subscribe':
-                $subject = 'Subscribe request';
+                $subject = 'Requisição de inscrição';
                 break;
             case 'order':
-                $subject = 'Order request';
+                $subject = 'Requisição de compra';
                 break;
             default:
-                $subject = 'A message from your site visitor';
+                $subject = 'Mensagem de um cliente';
                 break;
         }
     }else{
