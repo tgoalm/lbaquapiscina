@@ -39848,4 +39848,7 @@ a.pswp__share--download:hover {
 	height: 100%;
 }
 
+input:invalid {
+	border-color: red;
+}
 /*# sourceMappingURL=style.css.map */

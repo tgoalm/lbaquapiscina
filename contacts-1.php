@@ -21,7 +21,7 @@
       <main class="page-content" id="perspective">
         <div class="content-wrapper">
           <div class="page-header page-header-perspective">
-            <div class="page-header-left"><a class="brand" href="index.html"><img src="images/logo.png" alt="" width="75" height="75"/></a></div>
+            <div class="page-header-left"><a class="brand" href="index.php"><img src="images/logo.png" alt="" width="75" height="75"/></a></div>
           </div>
           <div id="wrapper">
             <div class="page-title">
@@ -61,27 +61,86 @@
                         </div>
                         <div class="box-contacts-col box-contacts-right">
                           <div class="box-contacts-block">
-                            <h3>Fale Conosco</h3>
-                            <p>Informe seu nome e telefone que entraremos em contato com você.</p>
-                            <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" date-time-picker="datetime">
-                              <div class="form-group form-wrap">
-                                <label class="form-label-outside" for="contact-full-name">Nome completo</label>
-                                <input class="form-control" id="contact-full-name" type="text" name="name" data-constraints="@Required">
-                              </div>
-                              <div class="form-group form-wrap">
-                                <label class="form-label-outside" for="contact-phone">Telefone</label>
-                                <input class="form-control" id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric">
-                              </div>
-                              <div class="form-group form-wrap">
-                                <label for="contact-email" class="form-label-outside">E-Mail</label>
-                                <input id="contact-email" type="email" name="email" data-constraints="@Email @Required" class="form-input form-control">
-                              </div>
-                              <div class="form-group form-wrap">
-                                <label for="contact-message" class="form-label-outside">Mensagem</label>
-                                <textarea id="contact-message" name="message" data-constraints="@Required" class="form-input form-control"></textarea>
-                              </div>
-                              <button class="btn btn-sm btn-primary btn-block btn-circle" type="submit" style="width: auto">SOLICITAR CONTATO</button>
-                            </form>
+                              <h3>Fale Conosco</h3>
+                              <p>Informe seu nome e telefone que entraremos em contato com você.</p>
+                              <?php
+                              $nome = $_POST['name'];
+                              $telefone = $_POST['phone'];
+                              $email = $_POST['email'];
+                              $mensagem = $_POST['message'];
+                              ?>
+                              <form method="post" name="dados" action="">
+                                  <div class="form-group form-wrap">
+                                      <label class="form-label-outside" for="contact-full-name">Nome
+                                          completo</label>
+                                      <input class="form-control" id="contact-full-name" type="text"
+                                             name="name" required>
+                                  </div>
+                                  <div class="form-group form-wrap">
+                                      <label class="form-label-outside" for="contact-phone">Telefone</label>
+                                      <input class="form-control" id="contact-phone" type="text" name="phone" required>
+                                  </div>
+                                  <div class="form-group form-wrap">
+                                      <label for="contact-email" class="form-label-outside">E-Mail</label>
+                                      <input id="contact-email" type="email" name="email" class="form-input form-control" required>
+                                  </div>
+                                  <div class="form-group form-wrap">
+                                      <label for="contact-message" class="form-label-outside">Mensagem</label>
+                                      <textarea id="contact-message" name="message"
+                                                class="form-input form-control"></textarea>
+                                  </div>
+                                  <button class="btn btn-sm btn-primary btn-block btn-circle" type="submit""
+                                          style="width: auto">SOLICITAR CONTATO
+                                  </button>
+                                  <?php
+
+                                  use PHPMailer\PHPMailer\PHPMailer;
+                                  use PHPMailer\PHPMailer\SMTP;
+                                  use PHPMailer\PHPMailer\Exception;
+
+                                  require 'vendor/autoload.php';
+
+                                  $mail = new PHPMailer(true);
+                                  try {
+                                      date_default_timezone_set('America/Sao_Paulo');
+                                      $data = date('d/m/Y H:i:s');
+                                      //Configurações do servidor
+                                      $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                                      $mail->isSMTP();
+                                      $mail->Host = 'smtp.hostinger.com';
+                                      $mail->SMTPAuth = true;
+                                      $mail->Username = 'contato@lbaquapiscina.com.br';
+                                      $mail->Password = 'Gomes09@';
+                                      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                                      $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                                      //Destinatário
+                                      $mail->setFrom('contato@lbaquapiscina.com.br');
+                                      $mail->addAddress('contato@lbaquapiscina.com.br');
+                                      $mail->addAddress('lbaquapiscina@gmail.com');
+                                      $mail->addReplyTo('lbaquapiscina@gmail.com', 'Contato solicitado via lbaquapiscina.com.br');
+
+                                      //Conteúdo
+                                      $mail->isHTML(true);
+                                      $mail->Subject = 'Contato';
+                                      $mail->Body = "Cliente solictou contato em $data.<br>
+                                                    Seguem dos dados de contato:<br>
+                                                    <ul>
+                                                        <li><b>Nome:</b> $nome</li>
+                                                        <li><b>Telefone:</b> $telefone</li>
+                                                        <li><b>E-mail:</b> $email</li>
+                                                        <li><b>Assunto:</b> $mensagem</li>
+                                                    </ul>";
+
+
+                                      $mail->send();
+
+                                      echo "A mensagem foi enviada com sucesso.";
+                                  } catch (Exception $exception) {
+                                      echo "A mensagem não pode ser enviada. Erro: {$mail->ErrorInfo}";
+                                  }
+                                  ?>
+                              </form>
                           </div>
                         </div>
                       </div>
@@ -95,12 +154,12 @@
               <footer class="page-footer page-footer-default">
                 <div class="shell">
                   <div class="range range-xs-center">
-                    <div class="cell-lg-10"><a class="brand" href="index.html"><img src="images/logo.png" alt="" width="75" height="75"/></a>
+                    <div class="cell-lg-10"><a class="brand" href="index.php"><img src="images/logo.png" alt="" width="75" height="75"/></a>
                       <div class="text-highlighted-wrap">
                         <p class="text-highlighted">Limpeza e manutençao de piscinas em São Paulo e litoral. Aproveite cada momento de lazer.
                       </div>
                       <ul class="footer-navigation footer-navigation-horizontal">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="about.html">Sobre nós</a></li>
                         <li class="active"><a href="services.html">Serviços</a></li>
                         <li><a href="contacts-1.html">Contatos</a></li>
@@ -123,13 +182,13 @@
             <div class="rd-navbar-inner">
               <div class="rd-navbar-panel">
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="images/logo.png" alt="" width="75" height="75"/></a></div>
+                <div class="rd-navbar-brand"><a class="brand-name" href="index.php"><img src="images/logo.png" alt="" width="75" height="75"/></a></div>
               </div>
               <div class="rd-navbar-nav-wrap">
                 <div class="rd-navbar-nav-inner">
                   <ul class="rd-navbar-nav">
                     <ul class="footer-navigation footer-navigation-horizontal">
-                      <li><a href="index.html">Home</a></li>
+                      <li><a href="index.php">Home</a></li>
                       <li><a href="about.html">Sobre nós</a></li>
                       <li class="active"><a href="services.html">Serviços</a></li>
                       <li><a href="contacts-1.html">Contatos</a></li>
