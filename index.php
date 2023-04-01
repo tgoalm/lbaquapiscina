@@ -213,21 +213,8 @@
                                             try {
                                                 date_default_timezone_set('America/Sao_Paulo');
                                                 $data = date('d/m/Y H:i:s');
-                                                //Configurações do servidor
-                                                $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                                                $mail->isSMTP();
-                                                $mail->Host = 'smtp.hostinger.com';
-                                                $mail->SMTPAuth = true;
-                                                $mail->Username = 'contato@lbaquapiscina.com.br';
-                                                $mail->Password = 'Gomes09@';
-                                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                                                $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                                                //Destinatário
-                                                $mail->setFrom('contato@lbaquapiscina.com.br');
-                                                $mail->addAddress('contato@lbaquapiscina.com.br');
-                                                $mail->addAddress('lbaquapiscina@gmail.com');
-                                                $mail->addReplyTo('lbaquapiscina@gmail.com', 'Contato solicitado via lbaquapiscina.com.br');
+  
+   
 
                                                 //Conteúdo
                                                 $mail->isHTML(true);
