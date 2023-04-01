@@ -3,6 +3,5 @@
   "smtpAuth": true,
   "smtpSecure": "tls",
   "user": "lbaquapiscina@gmail.com",
-  "pass": "Gomes09@",
-  "port": 587
+  "pass": "Gomes09@",  "port": 587
 }
