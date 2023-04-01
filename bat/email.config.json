@@ -1,7 +1,0 @@
-{
-  "host": "smtp.gmail.com",
-  "smtpAuth": true,
-  "smtpSecure": "tls",
-  "user": "lbaquapiscina@gmail.com",
-  "pass": "Gomes09@",  "port": 587
-}
